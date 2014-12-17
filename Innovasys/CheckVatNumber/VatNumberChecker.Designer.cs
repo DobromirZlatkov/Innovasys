@@ -31,11 +31,12 @@
             this.ButtonCheckVatNumber = new System.Windows.Forms.Button();
             this.TextBoxVatNumber = new System.Windows.Forms.TextBox();
             this.TextBoxCountryCode = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LabelVatNumber = new System.Windows.Forms.Label();
+            this.LabelCountryCode = new System.Windows.Forms.Label();
+            this.LabelResult = new System.Windows.Forms.Label();
             this.TextBoxResult = new System.Windows.Forms.TextBox();
+            this.LabelVatNumberError = new System.Windows.Forms.Label();
+            this.LabelCountryCodeError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ButtonCheckVatNumber
@@ -54,6 +55,7 @@
             this.TextBoxVatNumber.Name = "TextBoxVatNumber";
             this.TextBoxVatNumber.Size = new System.Drawing.Size(100, 20);
             this.TextBoxVatNumber.TabIndex = 2;
+            this.TextBoxVatNumber.TextChanged += new System.EventHandler(this.TextBoxVatNumber_TextChanged);
             // 
             // TextBoxCountryCode
             // 
@@ -61,59 +63,70 @@
             this.TextBoxCountryCode.Name = "TextBoxCountryCode";
             this.TextBoxCountryCode.Size = new System.Drawing.Size(100, 20);
             this.TextBoxCountryCode.TabIndex = 3;
+            this.TextBoxCountryCode.TextChanged += new System.EventHandler(this.TextBoxCountryCode_TextChanged);
             // 
-            // label1
+            // LabelVatNumber
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Vat number";
+            this.LabelVatNumber.AutoSize = true;
+            this.LabelVatNumber.Location = new System.Drawing.Point(30, 26);
+            this.LabelVatNumber.Name = "LabelVatNumber";
+            this.LabelVatNumber.Size = new System.Drawing.Size(61, 13);
+            this.LabelVatNumber.TabIndex = 4;
+            this.LabelVatNumber.Text = "Vat number";
             // 
-            // label2
+            // LabelCountryCode
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Country Code";
+            this.LabelCountryCode.AutoSize = true;
+            this.LabelCountryCode.Location = new System.Drawing.Point(30, 86);
+            this.LabelCountryCode.Name = "LabelCountryCode";
+            this.LabelCountryCode.Size = new System.Drawing.Size(71, 13);
+            this.LabelCountryCode.TabIndex = 5;
+            this.LabelCountryCode.Text = "Country Code";
             // 
-            // label3
+            // LabelResult
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 147);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Result";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(99, 147);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
-            this.label4.TabIndex = 7;
+            this.LabelResult.AutoSize = true;
+            this.LabelResult.Location = new System.Drawing.Point(30, 147);
+            this.LabelResult.Name = "LabelResult";
+            this.LabelResult.Size = new System.Drawing.Size(37, 13);
+            this.LabelResult.TabIndex = 6;
+            this.LabelResult.Text = "Result";
             // 
             // TextBoxResult
             // 
+            this.TextBoxResult.Enabled = false;
             this.TextBoxResult.Location = new System.Drawing.Point(102, 144);
             this.TextBoxResult.Name = "TextBoxResult";
             this.TextBoxResult.Size = new System.Drawing.Size(100, 20);
             this.TextBoxResult.TabIndex = 8;
             // 
+            // LabelVatNumberError
+            // 
+            this.LabelVatNumberError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.LabelVatNumberError.Location = new System.Drawing.Point(248, 23);
+            this.LabelVatNumberError.Name = "LabelVatNumberError";
+            this.LabelVatNumberError.Size = new System.Drawing.Size(229, 23);
+            this.LabelVatNumberError.TabIndex = 9;
+            // 
+            // LabelCountryCodeError
+            // 
+            this.LabelCountryCodeError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.LabelCountryCodeError.Location = new System.Drawing.Point(229, 83);
+            this.LabelCountryCodeError.Name = "LabelCountryCodeError";
+            this.LabelCountryCodeError.Size = new System.Drawing.Size(229, 23);
+            this.LabelCountryCodeError.TabIndex = 10;
+            // 
             // VatNumberChecker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(248, 262);
+            this.ClientSize = new System.Drawing.Size(514, 262);
+            this.Controls.Add(this.LabelCountryCodeError);
+            this.Controls.Add(this.LabelVatNumberError);
             this.Controls.Add(this.TextBoxResult);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LabelResult);
+            this.Controls.Add(this.LabelCountryCode);
+            this.Controls.Add(this.LabelVatNumber);
             this.Controls.Add(this.TextBoxCountryCode);
             this.Controls.Add(this.TextBoxVatNumber);
             this.Controls.Add(this.ButtonCheckVatNumber);
@@ -129,10 +142,11 @@
         private System.Windows.Forms.Button ButtonCheckVatNumber;
         private System.Windows.Forms.TextBox TextBoxVatNumber;
         private System.Windows.Forms.TextBox TextBoxCountryCode;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label LabelVatNumber;
+        private System.Windows.Forms.Label LabelCountryCode;
+        private System.Windows.Forms.Label LabelResult;
         private System.Windows.Forms.TextBox TextBoxResult;
+        private System.Windows.Forms.Label LabelVatNumberError;
+        private System.Windows.Forms.Label LabelCountryCodeError;
     }
 }
